@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    /* background-color: red; */
+}
+
+nav > a {
+    text-decoration: none;
+    color: #4D4D4D;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+/* .app {
+    background-color: red;
+    height: 100vh;
+} */
+
+/* --------------------- Header --------------------- */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background: #FFF7ED;
+    padding: 2.25em 1.625em;
+    color: #4D4D4D;
+    font-weight: 600;
+    align-items: center;
+}
+
+.header__logo {
+    width: 20%;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-around;
+    gap: 2em;
+    width: auto;
+}
+
+/* --------------------- Footer --------------------- */
+
+.footer {
+    background: #252525;
+    color: #AAA;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 1.625em 0;
+}
+
+/* --------------------- Home --------------------- */
+
+.home {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0.46) 100%), url("./assets/mountains.png"), lightgray 0px -65.191px / 100% 178.109% no-repeat;
+    background-size: cover;
+    padding: 4.1em 1.7em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #FFF;
+    font-weight: 500;
+    line-height: 1.5rem;
+    height: 74.7vh;
+}
+
+.home__title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 2.625rem;
+}
+
+.home__button {
+    border-radius: 0.3125rem;
+    background: #FF8C38;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 3em;
+    padding: 2em 0;
+}
+
+.home__button:hover,
+.home__button:focus {
+    background: #ff9950;
+}
+
+/* --------------------- Home --------------------- */
+
+.about {
+    display: grid;
+    grid-template: repeat(5, auto) / 5% 90% 5%;
+    grid-template-areas:
+            "image image image"
+            "..... title ....."
+            "..... text1 ....."
+            "..... text2 ....."
+            "..... cta .......";
+    gap: 2em / 0;
+    color: #161616;
+}
+
+.about__image { grid-area: image }
+.about__title { grid-area: title }
+.about__description__1 { grid-area: text1 }
+.about__description__2 { grid-area: text2 }
+.about__cta { grid-area: cta }
+
+.about__image {
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+.about__title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.about__description__1,
+.about__description__2 {
+    font-weight: 500;
+}
+
+.about__cta {
+    border-radius: 0.3125rem;
+    background: #FFCC8D;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.875rem;
+    padding: 2.3em 2em;
+    margin: 2em 0 3em 0;
+}
+
+.about__cta__text {
+    margin: 0 0 0.7em 0;
+}
+
+.about__cta__button {
+    border-radius: 0.625rem;
+    background: #161616;
+    color:  #FFF;
+    line-height: 2rem;
+    padding: 0.75em 1.375em;
+    margin-top: 1em;
+}
+
+.about__cta__button:hover,
+.about__cta__button:focus {
+    background: #282828;;
+}
