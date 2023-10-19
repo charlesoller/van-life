@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import VanThumbnail from "./VanThumbnail";
+import Van from "./Van";
+import { nanoid } from 'nanoid'
+import TypeTag from "./TypeTag";
 
 export default function Vans(){
     const [ vanData, setVanData ] = useState([])
@@ -15,21 +17,29 @@ export default function Vans(){
 
     const vansElement = vanData.map(van => {
         return (
-            <VanThumbnail
+            <Van
+                key={ nanoid() }
                 name={ van.name }
+                description={ van.description }
                 price={ van.price }
                 imageUrl = { van.imageUrl }
-                type={ van.price }
+                type={ van.type }
+                isThumbnail={ true }
             />
         )
     })
 
-    console.log(vanData)
+    const filtersElement = [...new Set(vanData.map(van => van.type))]   //creates set of unique items from type property
+                        .map(filter => {
+                            return <TypeTag type={filter} isFilter={true} key={nanoid()}/>
+                        })
+
     return (
         <section className="vans">
             <h1 className="vans__title">Explore our van options</h1>
             <div className="vans__filters">
-                {}
+                {filtersElement}
+                <p className="vans__filters__clear">Clear filters</p>
             </div>
             <div className="vans__grid">
                 {vansElement}
