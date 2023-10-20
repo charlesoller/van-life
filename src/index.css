@@ -13,7 +13,7 @@ body {
     background: #FFF7ED;
 }
 
-nav > a {
+a {
     text-decoration: none;
     color: #4D4D4D;
 }
@@ -64,7 +64,6 @@ button {
     font-size: 0.875rem;
     font-weight: 500;
     padding: 1.625em 0;
-    margin-top: 3em;
 }
 
 /* --------------------- Home --------------------- */
@@ -72,14 +71,15 @@ button {
 .home {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0.46) 100%), url("./assets/mountains.png"), lightgray 0px -65.191px / 100% 178.109% no-repeat;
     background-size: cover;
-    padding: 4.1em 1.7em;
+    padding: 4em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: #FFF;
     font-weight: 500;
     line-height: 1.5rem;
-    height: 74.7vh;
+    height: 75vh;
+    margin-bottom: 0;
 }
 
 .home__title {
@@ -90,7 +90,10 @@ button {
 
 .home__button {
     border-radius: 0.3125rem;
+    font-size: 1.5rem;
     background: #FF8C38;
+    color: #FFF;
+    width: 100%;
     font-weight: 700;
     text-align: center;
     margin-top: 3em;
@@ -167,7 +170,7 @@ button {
     background: #282828;;
 }
 
-/* --------------------- Van Component --------------------- */
+/* --------------------- Van Thumbnail Component --------------------- */
 
 /* Thumbnail Version */
 .van--thumbnail {
@@ -192,7 +195,6 @@ button {
     grid-area: name;
     font-size: 1.6rem;
     font-weight: 600;
-    /* background-color: red; */
     margin-bottom: 0;
 }
 
@@ -203,24 +205,92 @@ button {
     margin-bottom: 0;
     justify-self: right;
     height: min-content;
-    /* background-color: red; */
 }
 
 .van--thumbnail__price-subtext {
     grid-area: price-subtext;
     justify-self: right;
-    /* background-color: red; */
     margin-top: 0;
 }
 
-.type-tag.false {
+.van--thumbnail__type {
+    padding: 1em 2em;
     margin-top: 1em;
+}
+
+/* --------------------- Van Detail Component --------------------- */
+
+.van--detail {
+    display: flex;
+    flex-direction: column;
+    margin: 2em 10em 4em 10em;
+    color: #161616;
+}
+
+.van--detail__image {
+    order: -2;
+    height: 70vh;
+    object-fit: cover;
+    object-position: 50% 50%;
+    margin-bottom: 2em;
+    border-radius: 0.5em;
+}
+
+.van--detail__name {
+    font-size: 3.5rem;
+    margin-bottom: 0;
+}
+
+.van--detail__price {
+    font-size: 2rem;
+    margin: 0.3em 0 0.6em 0;
+    font-weight: 600;
+}
+
+.van--detail__price-subtext {
+    font-size: 1.5rem;
+    font-weight: 400;
 
 }
 
+.van--detail__type {
+    padding: 0.7em 3em;
+    font-weight: 600;
+}
+
+.van--detail__description {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 2.5rem; /* 149.496% */
+}
+
+.van--detail__button {
+    border-radius: 0.3em;
+    background: #FF8C38;
+    color: #FFF;
+    color: #FFF;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 1.5em 0;
+    margin-top: 2em;
+}
+
+.van--detail__button:hover,
+.van--detail__button:focus {
+    background-color: #ffa667;
+}
+
+.van--detail__type {
+    order: -1;
+}
 
 
 /* --------------------- Vans Page --------------------- */
+
+.vans {
+    margin-bottom: 4em;
+}
 
 .vans__title {
     color: #161616;
@@ -234,6 +304,11 @@ button {
     gap: 1em;
     margin-left: 2.2rem;
     margin-bottom: 2em;
+}
+
+.vans__filter {
+    padding: 1em 2em;
+    font-weight: 500;
 }
 
 .vans__grid {

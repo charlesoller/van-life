@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import logo from "./assets/vanlife_logo.png"
+import logo from "../assets/vanlife_logo.png"
 
 export default function Header(){
     return (
@@ -11,6 +11,7 @@ export default function Header(){
             <nav className="header__nav">
                 <Link to="/about">About</Link>
                 <Link to="/vans">Vans</Link>
+                <Link to="/host">Host</Link>
             </nav>
         </header>
     )

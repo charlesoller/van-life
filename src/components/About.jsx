@@ -1,5 +1,6 @@
 import React from 'react';
-import manOnvan from "./assets/man_on_van.png"
+import { Link } from 'react-router-dom'
+import manOnvan from "../assets/man_on_van.png"
 
 export default function About() {
   return (
@@ -12,7 +13,9 @@ export default function About() {
         <div className='about__cta'>
             <h3 className='about__cta__text'>Your destination is waiting.</h3>
             <h3 className='about__cta__text'>Your van is ready.</h3>
-            <button className='about__cta__button'>Explore our vans</button>
+            <Link to="/vans">
+              <button className='about__cta__button'>Explore our vans</button>
+            </Link>
         </div>
     </section>
   )
