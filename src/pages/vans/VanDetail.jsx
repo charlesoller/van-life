@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import TypeTag from './TypeTag'
+import TypeTag from '../../components/TypeTag'
 
 export default function VanThumbnail({ id, name, price, imageUrl, type }){
     const params = useParams();

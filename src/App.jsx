@@ -1,16 +1,18 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import "../../server"
+import "../server"
 
-import Home from "./Home"
-import About from "./About"
-import Vans from "./Vans"
-import VanDetail from './VanDetail';
-import Layout from "./Layout"
-import HostLayout from './HostLayout';
-import HostDashboard from './HostDashboard';
-import HostIncome from './HostIncome';
-import HostReviews from './HostReviews';
+import Home from "./pages/Home"
+import About from "./pages/About"
+import Vans from "./pages/vans/Vans"
+import VanDetail from './pages/vans/VanDetail';
+import Layout from "./components/layout/Layout"
+import HostLayout from './components/layout/HostLayout';
+import HostDashboard from './pages/host/HostDashboard';
+import HostIncome from './pages/host/HostIncome';
+import HostReviews from './pages/host/HostReviews';
+import HostVans from './pages/host/HostVans';
+import HostVanDetail from './pages/host/HostVanDetail';
 
 export default function App() {
   return (
@@ -26,6 +28,8 @@ export default function App() {
               <Route index element={<HostDashboard />} />
               <Route path="income" element={<HostIncome />} />
               <Route path="reviews" element={<HostReviews />} />
+              <Route path="vans" element={<HostVans />} />
+              <Route path="vans/:id" element={<HostVanDetail />} />
             </Route>
           </Route>
         </Routes>

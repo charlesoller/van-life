@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Van from "./VanThumbnail";
 import { nanoid } from 'nanoid'
-import TypeTag from "./TypeTag";
-import VanThumbnail from "./VanThumbnail";
+import TypeTag from "../../components/TypeTag";
+import VanThumbnail from "../../components/VanThumbnail";
 
 export default function Vans(){
     const [ vanData, setVanData ] = useState([])

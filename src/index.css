@@ -18,6 +18,13 @@ a {
     color: #4D4D4D;
 }
 
+nav > a:hover,
+.active-link {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #161616;
+}
+
 button {
     all: unset;
     cursor: pointer;
