@@ -21,7 +21,8 @@ a {
 nav > a:hover,
 .active-link {
     font-weight: bold;
-    text-decoration: underline;
+    border-bottom: 1px solid #161616;
+    margin-bottom: 1em;
     color: #161616;
 }
 
@@ -323,4 +324,143 @@ button {
     grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
     gap: 4em 2em;
     padding: 2.2em;
+}
+
+/* --------------------- Host Page --------------------- */
+
+.host {
+    padding: 2em 6em;
+}
+
+.host__nav {
+    display: flex;
+    gap: 2em;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 3em;
+}
+
+/* --------------------- Host Vans Tab --------------------- */
+
+.host__vans {
+    color: #161616;
+}
+
+.host-vans__grid {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(30%, 1fr));
+    gap: 2em;
+    margin-bottom: 3em;
+}
+
+.host-vans__title {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+/* --------------------- Host Van Thumbnail Component --------------------- */
+
+.host-van--thumbnail {
+    /* background-color: red; */
+    padding: 2em;
+    display: grid;
+    grid-template: repeat(2, auto) / 15% 80%;
+    grid-template-areas:
+            "image name"
+            "image price";
+    border-radius: 0.4em;
+    background: #FFF;
+    color: #161616;
+    column-gap: 3em;
+}
+
+.host-van--thumbnail__name {
+    grid-area: name;
+    font-size: 2.5rem;
+    font-weight: 600;
+    align-self: end;
+    margin: 0;
+}
+
+.host-van--thumbnail__price {
+    grid-area: price;
+    font-size: 1.5rem;
+    align-self: start;
+    margin-top: 0.5em;
+}
+
+.host-van--thumbnail__image {
+    grid-area: image;
+    width: 100%;
+    border-radius: 0.4em;
+}
+
+/* --------------------- Host Van Detail Page --------------------- */
+
+.host-van--detail {
+    padding: 2em;
+    background: #FFF;
+    border-radius: 0.4em;
+    color: #161616;
+    margin-bottom: 3em;
+}
+
+.host-van--detail__top-container {
+    display: grid;
+    grid-template: repeat(3, 1fr) / 25% 70%;
+    grid-template-areas:
+            "image type"
+            "image name"
+            "image price";
+    column-gap: 2.5em;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.host-van--detail__image {
+    grid-area: image;
+    width: 100%;
+    border-radius: 0.4em;
+}
+
+.host-van--detail__name {
+    grid-area: name;
+    font-size: 3rem;
+    margin: 0;
+    align-self: center;
+}
+
+.host-van--detail__type {
+    grid-area: type;
+    padding: 0.7em 2em;
+    font-size: 1.2rem;
+    font-weight: 600;
+    align-self: end;
+    margin-bottom: 1em;
+}
+
+.host-van--detail__price {
+    margin: 0;
+    grid-area: price;
+    align-self: start;
+    font-size: 1.6rem;
+}
+
+.host-van--detail__price-subtext {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.host-van--detail__nav {
+    display: flex;
+    gap: 1.5em;
+    font-size: 1.1rem;
+    margin-bottom: 2em;
+}
+
+.host-van--detail > p {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 21.46px; /* 149.496% */
 }

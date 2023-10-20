@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import TypeTag from '../../components/TypeTag'
 
-export default function VanThumbnail({ id, name, price, imageUrl, type }){
+export default function VanThumbnail(){
     const params = useParams();
     const [ vanData, setVanData ] = useState(null)
 
@@ -22,7 +22,7 @@ export default function VanThumbnail({ id, name, price, imageUrl, type }){
             <h1 className="van--detail__name">{ vanData.name }</h1>
             <h3 className="van--detail__price">${ vanData.price }<span className="van--detail__price-subtext">/day</span></h3>
             <p className="van--detail__description"> {vanData.description }</p>
-            <TypeTag type="simple" className="van--detail__type"/>
+            <TypeTag type={ vanData.type } className="van--detail__type"/>
             <button className="van--detail__button">Rent this van</button>
         </div>
         : <h2>Loading...</h2>
