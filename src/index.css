@@ -402,7 +402,7 @@ button {
     background: #FFF;
     border-radius: 0.4em;
     color: #161616;
-    margin-bottom: 3em;
+    margin: 1em 0 3em 0;
 }
 
 .host-van--detail__top-container {
@@ -456,11 +456,16 @@ button {
     display: flex;
     gap: 1.5em;
     font-size: 1.1rem;
-    margin-bottom: 2em;
 }
 
-.host-van--detail > p {
+.host-van--detail__details {
     font-size: 1rem;
     font-weight: 500;
-    line-height: 21.46px; /* 149.496% */
+    line-height: 1.5rem;
+}
+
+.host-van--detail__back {
+    color: #201F1D;
+    font-weight: 500;
+    text-decoration: underline;
 }

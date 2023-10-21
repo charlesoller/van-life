@@ -9,9 +9,9 @@ export default function Header(){
                 <img className="header__logo" src={logo} alt="The text logo of #VANLIFE in bolded, capitalized letters." />
             </Link>
             <nav className="header__nav">
-                <NavLink className={({isActive}) => isActive ? "active-link" : null} to="/about">About</NavLink>
-                <NavLink className={({isActive}) => isActive ? "active-link" : null} to="/vans">Vans</NavLink>
-                <NavLink className={({isActive}) => isActive ? "active-link" : null} to="/host">Host</NavLink>
+                <NavLink className={({isActive}) => isActive ? "active-link" : null} to="about">About</NavLink>
+                <NavLink className={({isActive}) => isActive ? "active-link" : null} to="vans">Vans</NavLink>
+                <NavLink className={({isActive}) => isActive ? "active-link" : null} to="host">Host</NavLink>
             </nav>
         </header>
     )
