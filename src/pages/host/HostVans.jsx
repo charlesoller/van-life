@@ -1,18 +1,27 @@
 import React, { useState, useEffect } from "react"
 import { nanoid } from "nanoid"
 import HostVanThumbnail from "../../components/HostVanThumbnail"
+import { getHostVans } from "../../utility/api"
 
 export default function HostVans(){
     const [ vanData, setVanData ] = useState([])
+    const [loading, setLoading] = React.useState(false)
+    const [error, setError] = React.useState(null)
 
     useEffect(() => {
-        fetch("/api/host/vans")
-        .then(response => response.json())
-        .then(data => setVanData(data.vans))
-        .catch((err) => {
-            console.log(err.message);
-        });
-    }, []);
+        async function loadVans() {
+            setLoading(true)
+            try {
+                const data = await getHostVans()
+                setVanData(data)
+            } catch (err) {
+                setError(err)
+            } finally {
+                setLoading(false)
+            }
+        }
+        loadVans()
+    }, [])
 
     const vansElement = vanData.map(van => {
         return (
@@ -26,14 +35,20 @@ export default function HostVans(){
         )
     })
 
+    if (loading) {
+        return <h1>Loading...</h1>
+    }
+
+    if (error) {
+        return <h1>There was an error: {error.message}</h1>
+    }
+
     return (
-        vanData.length ?
         <div className="host-vans">
             <h1 className="host-vans__title">Your listed vans</h1>
             <div className="host-vans__grid">
                 { vansElement }
             </div>
         </div>
-        : <h3>Loading...</h3>
     )
 }

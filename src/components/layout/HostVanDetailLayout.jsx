@@ -1,19 +1,37 @@
 import React, { useState, useEffect } from "react"
 import  { NavLink, Link, Outlet, useParams } from "react-router-dom"
 import TypeTag from "../TypeTag";
+import { getHostVans } from "../../utility/api";
 
 export default function HostVanDetailLayout(){
-    const params = useParams();
-    const [ vanData, setVanData ] = useState([])
+    const [vanData, setVanData] = useState([])
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
+    const { id } = useParams()
 
     useEffect(() => {
-        fetch(`/api/host/vans/${params.id}`)
-        .then(response => response.json())
-        .then(data => setVanData(...data.vans))
-        .catch((err) => {
-            console.log(err.message);
-        });
-    }, [params.id]);
+        async function loadVans() {
+            setLoading(true)
+            try {
+                const data = await getHostVans(id)
+                setVanData(...data)
+            } catch (err) {
+                setError(err)
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        loadVans()
+    }, [id])
+
+    if (loading) {
+        return <h1>Loading...</h1>
+    }
+
+    if (error) {
+        return <h1>There was an error: {error.message}</h1>
+    }
 
     return (
         <>
