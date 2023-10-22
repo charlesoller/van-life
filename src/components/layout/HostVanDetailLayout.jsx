@@ -30,7 +30,7 @@ export default function HostVanDetailLayout(){
                     <NavLink className={({isActive}) => isActive ? "active-link" : null} to={`pricing`}>Pricing</NavLink>
                     <NavLink className={({isActive}) => isActive ? "active-link" : null} to={`photos`}>Photos</NavLink>
                 </nav>
-                <Outlet />
+                <Outlet context={[ vanData, setVanData ]}/>
             </div>
         </>
     )

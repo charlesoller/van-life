@@ -319,6 +319,10 @@ button {
     font-weight: 500;
 }
 
+.vans__filters__clear {
+    align-self: center;
+}
+
 .vans__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
@@ -468,4 +472,29 @@ button {
     color: #201F1D;
     font-weight: 500;
     text-decoration: underline;
+}
+
+/* Pricing */
+
+.host-van--detail__pricing {
+    color: #4D4D4D;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.host-van--detail__pricing__price {
+    color: #161616;
+    font-size: 2rem;
+}
+
+/* Photos */
+
+.host-van--detail__photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.host-van--detail__photos > img {
+    width: 100%;
+    border-radius: 0.2em;
 }

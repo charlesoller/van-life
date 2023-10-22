@@ -27,11 +27,13 @@ export default function HostVans(){
     })
 
     return (
+        vanData.length ?
         <div className="host-vans">
             <h1 className="host-vans__title">Your listed vans</h1>
             <div className="host-vans__grid">
                 { vansElement }
             </div>
         </div>
+        : <h3>Loading...</h3>
     )
 }
