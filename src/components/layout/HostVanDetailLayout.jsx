@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import  { NavLink, Link, Outlet, useParams } from "react-router-dom"
 import TypeTag from "../TypeTag";
-import { getHostVans } from "../../utility/api";
+import { getVan } from "../../utility/api";
 
 export default function HostVanDetailLayout(){
     const [vanData, setVanData] = useState([])
@@ -13,8 +13,8 @@ export default function HostVanDetailLayout(){
         async function loadVans() {
             setLoading(true)
             try {
-                const data = await getHostVans(id)
-                setVanData(...data)
+                const data = await getVan(id)
+                setVanData(data)
             } catch (err) {
                 setError(err)
             } finally {

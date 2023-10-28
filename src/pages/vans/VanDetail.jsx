@@ -1,30 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, NavLink, useLocation } from 'react-router-dom'
 import TypeTag from '../../components/TypeTag'
-import { getVans } from '../../utility/api';
+import { getVan } from '../../utility/api';
 
 export default function VanDetail(){
     const { id }= useParams();
     const location = useLocation();
     const search = location.state?.search || "";
     const [ vanData, setVanData ] = useState(null)
-    const [loading, setLoading] = React.useState(false)
-    const [error, setError] = React.useState(null)
-
-    // useEffect(() => {
-    //     fetch(`/api/vans/${params.id}`)
-    //     .then(response => response.json())
-    //     .then(data => setVanData(data.vans))
-    //     .catch((err) => {
-    //         console.log(err.message);
-    //     });
-    // }, [params.id]);
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
 
     useEffect(() => {
         async function loadVans() {
             setLoading(true)
             try {
-                const data = await getVans(id)
+                const data = await getVan(id)
                 setVanData(data)
             } catch (err) {
                 setError(err)
@@ -44,7 +35,6 @@ export default function VanDetail(){
     }
 
     return (
-        vanData ?
         <div className="van--detail">
             <NavLink to={`..${search}`} relative="path" className="van--detail__back">← Back to { search !== '?' ? vanData.type : 'all' } vans</NavLink>
             <img className="van--detail__image" src={ vanData.imageUrl } alt="An image of a van available for rental." />
@@ -54,6 +44,5 @@ export default function VanDetail(){
             <TypeTag type={ vanData.type } className="van--detail__type"/>
             <button className="van--detail__button">Rent this van</button>
         </div>
-        : <h2>Loading...</h2>
     )
 }

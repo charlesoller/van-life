@@ -43,6 +43,7 @@ export default function Login() {
             {error?.message && <h3>{error.message}</h3>}
             <form onSubmit={handleSubmit} className="login-form">
                 <input
+                    className="login__email"
                     name="email"
                     onChange={handleChange}
                     type="email"
@@ -50,13 +51,14 @@ export default function Login() {
                     value={loginFormData.email}
                 />
                 <input
+                    className="login__password"
                     name="password"
                     onChange={handleChange}
                     type="password"
                     placeholder="Password"
                     value={loginFormData.password}
                 />
-                <button disabled={status === "submitting"}>
+                <button className="login__button" disabled={status === "submitting"}>
                     {status === "submitting" ? "Logging in..." : "Log in"}
                 </button>
             </form>
